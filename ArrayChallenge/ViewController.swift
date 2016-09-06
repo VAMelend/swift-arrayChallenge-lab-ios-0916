@@ -9,9 +9,39 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+
+    // Make key,value pair using shoppingList, quantityOfItems
+    //Iterate over and print together 
+
+    
+    
+  
     
     // Our blank piece of paper
-    var shoppingList: [String] = []
+    
+
+    
+    func  makeShoppingListWithItems ( names: [String], quantity: [Int]){
+        
+        var dictionary: [String: Int] = [:]
+        
+        for (index, element) in names.enumerate()
+        {
+            dictionary[element] = quantity[index]
+        }
+        print (dictionary)
+        
+        var counter = 1
+        
+        for (names, quantity) in dictionary {
+            print ("\(counter). \(names) \(quantity)")
+            counter += 1
+        
+        }
+        
+    }
+ 
     
     // Quantity of items
     var quantityOfItems: [Int] = [6, 4, 12, 4]
@@ -24,6 +54,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // After you're done implementing your method, call on it here. You can remove this example below
+        makeShoppingListWithItems(nameOfItems, quantity: quantityOfItems)
         
         thisIsAnExample()
         
